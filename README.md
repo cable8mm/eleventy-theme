@@ -1,10 +1,10 @@
-# Laravel theme for Document2
+# Eleventy theme for Document2
 
 [![js-tests](https://github.com/cable8mm/eleventy-theme/actions/workflows/js-tests.yml/badge.svg)](https://github.com/cable8mm/eleventy-theme/actions/workflows/js-tests.yml)
 ![GitHub Release](https://img.shields.io/github/v/release/cable8mm/eleventy-theme)
 ![GitHub License](https://img.shields.io/github/license/cable8mm/eleventy-theme)
 
-This is the official laravel theme for [Document2](https://github.com/cable8m/document2).
+This is the official eleventy theme for [Document2](https://github.com/cable8m/document2).
 
 ## Features
 
@@ -13,7 +13,7 @@ This is the official laravel theme for [Document2](https://github.com/cable8m/do
 - [x] Dark Mode
 - [x] Integration with the Document2
 
-![Laravel Theme Preview](https://cabinet.palgle.com/eleventy-theme-preview.png)
+![Eleventy Theme Preview](https://cabinet.palgle.com/eleventy-theme-preview.png)
 
 ## Local Development
 
