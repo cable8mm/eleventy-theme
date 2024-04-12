@@ -6,17 +6,23 @@ import Focus from '@alpinejs/focus'
 import { toDarkMode, toLightMode, toSystemMode } from './components/theme'
 
 import './clipboard'
+import './components/search'
+
+import SetTab from './tabbed_code.js'
+
+window.toDarkMode = toDarkMode
+window.toLightMode = toLightMode
+window.toSystemMode = toSystemMode
 
 window.Alpine = Alpine
 
 Alpine.plugin(Focus)
 Alpine.start()
 
-window.toDarkMode = toDarkMode
-window.toLightMode = toLightMode
-window.toSystemMode = toSystemMode
+window.setTab = SetTab
 
 document.addEventListener('DOMContentLoaded', () => {
   import('./docs.js')
+
   import('./components/accessibility')
 })

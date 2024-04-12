@@ -1,0 +1,19 @@
+import { $qa } from '../helpers/dom'
+
+const parseHeadings = headings => {
+  return headings.map(heading => {
+    const a = heading.querySelector('a')
+
+    return {
+      tag: `${heading.tagName}`,
+      href: `${a.href.replace(/.+#/g, '#')}`,
+      text: a.textContent.trim()
+    }
+  })
+}
+
+const getHeadings = () => $qa('#main-content h2[id], #main-content h3[id]')
+
+console.log(getHeadings())
+
+export { parseHeadings, getHeadings }
