@@ -6,25 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f8fafc" />
     <meta name="color-scheme" content="light" />
-    <script>
-      const alwaysLightMode = false;
-    </script>
-    <script>
-      try {
-        if (
-          localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-          document
-            .querySelector('meta[name="theme-color"]')
-            .setAttribute("content", "#0B1120");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      } catch (_) { }
-    </script>
   </head>
 
   <body
@@ -48,6 +29,7 @@
               d="M16.293 17.707a1 1 0 0 0 1.414-1.414l-1.414 1.414ZM9 14a5 5 0 0 1-5-5H2a7 7 0 0 0 7 7v-2ZM4 9a5 5 0 0 1 5-5V2a7 7 0 0 0-7 7h2Zm5-5a5 5 0 0 1 5 5h2a7 7 0 0 0-7-7v2Zm8.707 12.293-3.757-3.757-1.414 1.414 3.757 3.757 1.414-1.414ZM14 9a4.98 4.98 0 0 1-1.464 3.536l1.414 1.414A6.98 6.98 0 0 0 16 9h-2Zm-1.464 3.536A4.98 4.98 0 0 1 9 14v2a6.98 6.98 0 0 0 4.95-2.05l-1.414-1.414Z"></path>
           </svg>
           <input
+            id="docsearch"
             type="text"
             name="q"
             placeholder="Search docs…"
@@ -224,8 +206,9 @@
       </div>
 
       <div
-        class="flex-auto max-w-2xl min-w-0 px-4 py-10 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
-        <article class="prose lg:prose-xl docs_main">
+        class="grid grid-cols-1 gap-0 md:grid-cols-3 md:gap-4 lg:grid-cols-1 lg:gap-0 xl:grid-cols-4 xl:gap-4 mt-8 md:mt-16 flex-auto max-w-2xl min-w-0 px-4 py-10 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+        <article
+          class="prose lg:prose-xl docs_main md:col-span-2 lg:col-auto xl:col-span-3">
           <div id="main-content">
             <header class>
               <p class="text-base font-medium text-slate-500">
@@ -238,6 +221,9 @@
             <p><a name="alert"></a></p>
             <h2>Alert</h2>
 
+            <p><a name="alert-note"></a></p>
+            <h3>Note</h3>
+
             <blockquote>
               <p>
                 [!NOTE]<br />
@@ -248,6 +234,9 @@
               </p>
             </blockquote>
 
+            <p><a name="alert-warning"></a></p>
+            <h3>Warning</h3>
+
             <blockquote>
               <p>
                 [!WARNING]<br />
@@ -255,7 +244,7 @@
               </p>
             </blockquote>
 
-            <p><a name="introduction"></a></p>
+            <p><a name="code"></a></p>
             <h2>Code</h2>
             <p>
               Artisan exists at the root of your application as the
@@ -287,17 +276,25 @@
             <div class="code-container">
               <pre><code data-theme="olaolu-palenight" data-lang="js" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;" id="clipText-15"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #C792EA;">import</span><span style="color: #BFC7D5;"> { defineConfig } </span><span style="color: #C792EA;">from</span><span style="color: #BFC7D5;"> </span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">vite</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">;</span></div><div class="line"><span style="color: #C792EA;">import</span><span style="color: #BFC7D5;"> laravel </span><span style="color: #C792EA;">from</span><span style="color: #BFC7D5;"> </span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">laravel-vite-plugin</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">;</span></div><div class="line">&nbsp;</div><div class="line"><span style="color: #C792EA;">export</span><span style="color: #BFC7D5;"> </span><span style="color: #C792EA;">default</span><span style="color: #BFC7D5;"> </span><span style="color: #82AAFF;">defineConfig</span><span style="color: #BFC7D5;">({</span></div><div class="line"><span style="color: #BFC7D5;">    plugins: [</span></div><div class="line"><span style="color: #BFC7D5;">        </span><span style="color: #82AAFF;">laravel</span><span style="color: #BFC7D5;">([</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">resources/ts/app.tsx</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">]),</span></div><div class="line"><span style="color: #BFC7D5;">    ],</span></div><div class="line"><span style="color: #BFC7D5;">    resolve: {</span></div><div class="line"><span style="color: #BFC7D5;">        alias: {</span></div><div class="line"><span style="color: #BFC7D5;">            </span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">@</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">: </span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">/resources/ts</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">,</span></div><div class="line"><span style="color: #BFC7D5;">        },</span></div><div class="line"><span style="color: #BFC7D5;">    },</span></div><div class="line"><span style="color: #BFC7D5;">});</span></div></code></pre>
             </div>
+
+            <p><a name="group"></a></p>
+            <h2>Group</h2>
+
             <p>Group:</p>
             <div class="code-container">
-              <div class="tabbed-code"
+              <div
+                class="tabbed-code"
                 data-group="f86d679141246e9825a8f6c067a5f5a8">
                 <div class="tabbed-code-nav">
-                  <button class="tabbed-code-nav-button active"
+                  <button
+                    class="tabbed-code-nav-button active"
                     data-tab="Vue"
                     onClick="setTab('Vue', 'f86d679141246e9825a8f6c067a5f5a8')">
                     Vue
                   </button>
-                  <button class="tabbed-code-nav-button" data-tab="React"
+                  <button
+                    class="tabbed-code-nav-button"
+                    data-tab="React"
                     onClick="setTab('React', 'f86d679141246e9825a8f6c067a5f5a8')">
                     React
                   </button>
@@ -305,11 +302,11 @@
                 <div class="tabbed-code-body">
                   <div class="code-container active" data-tab="Vue">
                     <pre><code class="language-vue">//
-                                  </code></pre>
+                                            </code></pre>
                   </div>
                   <div class="code-container" data-tab="React">
                     <pre><code class="language-javascript">//
-                                  </code></pre>
+                                            </code></pre>
                   </div>
                 </div>
               </div>
@@ -317,14 +314,18 @@
             <!-- doc.content.end -->
           </div>
         </article>
-      </div>
+        <!-- toc.content.start -->
+        <div
+          id="autotoc"
+          class="relative md:sticky md:top-10 md:h-screen lg:relative lg:h-auto xl:sticky xl:h-screen">
+        </div>
+        <!-- toc.content.end --> </div>
     </main>
     <script>
       var algolia_app_id = "";
       var algolia_search_key = "";
       var version = "{{ version }}";
     </script>
-    <script type="text/javascript" src="./js/tabbed_code.js" defer></script>
     <script type="module" src="./js/app.js" defer></script>
   </body>
 </html>
